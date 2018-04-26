@@ -76,7 +76,7 @@ PPRZCENTER=sw/supervision
 MISC=sw/ground_segment/misc
 LOGALIZER=sw/logalizer
 
-SUBDIRS = $(PPRZCENTER) $(MISC) $(LOGALIZER) $(TOOLS)
+SUBDIRS = $(PPRZCENTER) $(MISC) $(LOGALIZER) sw/tools
 
 #
 # Communication protocol version
@@ -312,6 +312,7 @@ test: test_math test_examples
 # subset of airframes for coverity test to pass the limited build time on travis
 test_coverity: all
 	CONF_XML=conf/conf_tests_coverity.xml prove tests/aircrafts/
+#CONF_XML=conf/conf_tests_coverity.xml J=AUTO prove tests/aircrafts/
 
 # test AggieAir conf
 test_aggieair: all
